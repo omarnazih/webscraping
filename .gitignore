@@ -4,3 +4,4 @@
 /LICENSE.chromedriver
 /venv
 /__pycache__
+*.xlsx
