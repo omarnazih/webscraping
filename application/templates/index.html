@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html dir="rtl" lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://unpkg.com/@picocss/pico@1.*/css/pico.min.css">
+    <title>Document</title>
+</head>
+<body>
+    <div class="container">
+        <hgroup>
+            <h1>نتيجة الصف الأول الثانوي</h1>
+            <h3>مدرسة كفرإبرش ث</h3>
+        </hgroup>
+        <table>
+            <thead>
+                <tr>
+                    <th>رقم الجلوس</th>
+                    <th>كود الطالب</th>
+                    <th>الأسم</th>
+                    <th>المجموع</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for student in students_list %}
+                <tr>
+                    <td>{{student.seating_num}}</td>
+                    <td>{{student.code}}</td>
+                    <td>{{student.full_name}}</td>
+                    <td>{{student.general_grade}}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>
