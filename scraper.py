@@ -8,7 +8,7 @@ from selenium.webdriver.support.ui import Select
 from selenium.webdriver.common.by import By
 
 from dao import insert_item
-from generate_excel import generate_excel
+# from generate_excel import generate_excel
 
 meta = MetaData()
 load_dotenv()
@@ -93,7 +93,7 @@ for i in range(1,500):
     col_data = entries[1].find_elements(By.TAG_NAME, 'td')
 
 
-    stmt = insert(test_results).values(student_id=1, arabic=col_data[0].text, english=col_data[1].text, secondary_language=col_data[2].text, math=col_data[3].text, chemistry=col_data[4].text, physics=col_data[5].text, biology=col_data[6].text, history=col_data[7].text, philosophy=col_data[8].text, geographic=col_data[9].text)
+    stmt = insert(test_results).values(student_id=student_id, arabic=col_data[0].text, english=col_data[1].text, secondary_language=col_data[2].text, math=col_data[3].text, chemistry=col_data[4].text, physics=col_data[5].text, biology=col_data[6].text, history=col_data[7].text, philosophy=col_data[8].text, geographic=col_data[9].text)
 
     compiled = stmt.compile()
     # print(compiled.params)
@@ -105,4 +105,4 @@ driver.close()
 driver.quit()
 
 # Generate Excel After Finishing
-generate_excel(engine)
+# generate_excel(engine)

@@ -4,7 +4,7 @@ from selenium import webdriver
 from selenium.webdriver.support.ui import Select
 from selenium.webdriver.common.by import By
 from dao import insert_item
-from generate_excel import generate_excel
+# from generate_excel import generate_excel
 
 class Scraper:
     def __init__(self, url, start, end, driver_path, db_url):
@@ -87,6 +87,6 @@ class Scraper:
 
                 insert_item(engine, stmt)
 
-    def generate_excel(self, engine):
-        # Generate Excel After Finishing
-        generate_excel(engine)
+    # def generate_excel(self, engine):
+    #     # Generate Excel After Finishing
+    #     generate_excel(engine)
